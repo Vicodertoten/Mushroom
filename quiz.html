@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Champignons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">Guide</a>
+        <a href="quiz.html" class="nav-link active">Quiz</a>
+    </nav>
+
+    <header>
+        <h1>Quiz : Testez vos connaissances</h1>
+        <div id="score-display" class="score-display"></div>
+    </header>
+
+    <main class="quiz-container">
+        <div id="difficulty-selector" class="difficulty-selector">
+            <h2>Choisissez votre niveau de difficulté</h2>
+            <button id="easy-mode-btn" class="difficulty-btn">Facile <span class="difficulty-desc">(Choix multiples)</span></button>
+            <button id="hard-mode-btn" class="difficulty-btn">Difficile <span class="difficulty-desc">(Saisie du nom)</span></button>
+        </div>
+
+        <div id="quiz-section" style="display: none;">
+            <div class="carousel-container">
+                <div id="quiz-carousel-track" class="carousel-track"></div>
+                <button id="quiz-prev-btn" class="carousel-btn prev">&lt;</button>
+                <button id="quiz-next-btn" class="carousel-btn next">&gt;</button>
+                <div id="quiz-photo-counter" class="carousel-counter"></div>
+            </div>
+            <div id="mcq-options" class="quiz-options" style="display: none;"></div>
+            <form id="quiz-form" class="quiz-form" style="display: none;">
+                <input type="text" id="quiz-input" placeholder="Entrez le nom du champignon..." required autocomplete="off">
+                <button type="submit" id="submit-btn">Valider</button>
+            </form>
+        </div>
+
+        <div id="answer-details-container" style="display: none;">
+            <div id="feedback-box" class="feedback-box"></div>
+            <div class="details-grid">
+                <div class="left-column">
+                    <div class="carousel-container">
+                        <div id="answer-carousel-track" class="carousel-track"></div>
+                        <button id="answer-prev-btn" class="carousel-btn prev">&lt;</button>
+                        <button id="answer-next-btn" class="carousel-btn next">&gt;</button>
+                        <div id="answer-photo-counter" class="carousel-counter"></div>
+                    </div>
+                    <div id="mushroom-alert-quiz" class="alert-section" style="display: none;"></div>
+                </div>
+                <div class="info-container">
+                    <div class="info-section">
+                        <h2>Description</h2>
+                        <p id="mushroom-description-quiz"></p>
+                    </div>
+                    <div class="info-section">
+                        <h2>Habitat</h2>
+                        <p id="mushroom-habitat-quiz"></p>
+                    </div>
+                    <div class="info-section">
+                        <h2>Saison</h2>
+                        <p id="mushroom-saison-quiz"></p>
+                    </div>
+                </div>
+            </div>
+            <button id="next-question-btn" class="next-question-btn">Question Suivante</button>
+        </div>
+    </main>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
